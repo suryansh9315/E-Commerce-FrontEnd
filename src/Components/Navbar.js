@@ -5,7 +5,7 @@ import Badge from '@mui/material/Badge';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const NavbarContainer = styled.div`
-    height:60px;
+    height:70px;
     display: flex;
     align-items: center;
 `
