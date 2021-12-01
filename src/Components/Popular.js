@@ -60,17 +60,9 @@ const Element = styled.div`
         opacity: 1;
     }
 `
-const Title = styled.div`
-    font-size: 3vw;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 25px;
-`
-
 export default function Categories() {
     return (
         <Container>
-            <Title>Popular Products</Title>
             <Wrapper>
                 {popularProducts.map(item => {
                     return (
