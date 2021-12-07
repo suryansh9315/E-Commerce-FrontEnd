@@ -23,12 +23,22 @@ const Box = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    @media only screen and (max-width:800px){
+        width: 60%;
+    }
 `
 const Title = styled.div`
     font-size: 30px;
     margin: 20px 0px;
     text-align: center;
+    @media only screen and (max-width:800px){
+        font-size: 25px;
+    }
+    @media only screen and (max-width:500px){
+        font-size: 21px;
+    }
 `
+
 const Form = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -42,11 +52,25 @@ const Input = styled.input`
     outline: none;
     margin: 10px 0px;
     margin-right: 10px;
+    @media only screen and (max-width:1192px){
+        min-width: 75%;
+    }
+    @media only screen and (max-width:800px){
+        min-width: 75%;
+        margin: 5px 0px;
+    }
+    @media only screen and (max-width:500px){
+        min-width: 85%;
+        margin: 5px 0px;
+    }
 `
 const Policy = styled.div`
     font-size: 16px;
     margin: 20px 0px;
     min-width: 43%;
+    @media only screen and (max-width:800px){
+        font-size: 13px;
+    }
 `
 const Button = styled.div`
     background-color: white;

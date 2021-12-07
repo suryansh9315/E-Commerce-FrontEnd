@@ -17,16 +17,27 @@ const Filter = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 20px 20px;
+    @media only screen and (max-width:600px){
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
 `
 const FilterItem = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media only screen and (max-width:600px){
+        margin: 5px 0px;
+    }
 `
 const Title2 = styled.div`
     font-size: 20px;
     font-weight: bold;
     margin-right: 10px;
+    @media only screen and (max-width:800px){
+        font-size: 15px;
+    }
 `
 const Select = styled.select`
     background-color: white;
@@ -35,6 +46,9 @@ const Select = styled.select`
     font-size: 16px;
     border: 1px solid black;
     margin-right: 10px;
+    @media only screen and (max-width:800px){
+        font-size: 14px;
+    }
 `
 const Option = styled.option`
     background-color: white;
@@ -51,7 +65,7 @@ export default function ProductList() {
             <Title>Winter</Title>
             <Filter>
                 <FilterItem>
-                <Title2>Filter Products:</Title2>
+                    <Title2>Filter Products:</Title2>
                     <FilterItem>
                         <Select>
                             <Option selected>Color</Option>
@@ -74,7 +88,7 @@ export default function ProductList() {
                     </FilterItem>
                 </FilterItem>
                 <FilterItem>
-                <Title2>Sort Products:</Title2>
+                    <Title2>Sort Products:</Title2>
                     <Select>
                             <Option selected>Latest</Option>
                             <Option>Price(asc)</Option>

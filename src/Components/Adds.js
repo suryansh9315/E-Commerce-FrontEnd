@@ -13,6 +13,9 @@ const Text = styled.div`
     font-size: 13px;
     color: white;
     letter-spacing: 1.5px;
+    @media only screen and (max-width:500px){
+        font-size: 10px;
+    }
 `
 
 export default function Adds() {

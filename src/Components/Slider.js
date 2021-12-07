@@ -9,6 +9,12 @@ const Container = styled.div`
     height: 100vh;
     position: relative;
     overflow: hidden;
+    @media only screen and (max-width:750px){
+        height: 70vh;
+    }
+    @media only screen and (max-width:600px){
+        height: 50vh;
+    }
 `
 const Wrapper = styled.div`
     height: 100%;
@@ -16,11 +22,23 @@ const Wrapper = styled.div`
     transition: all 0.5s ease;
     display: flex;
     transform: translateX(${props=>props.currentpage*-100}vw);
+    @media only screen and (max-width:750px){
+        height: 70vh;
+    }
+    @media only screen and (max-width:600px){
+        height: 50vh;
+    }
 `
 const Slideritem = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
+    @media only screen and (max-width:750px){
+        height: 70vh;
+    }
+    @media only screen and (max-width:600px){
+        height: 50vh;
+    }
 `
 const Left = styled.div`
     /* flex: 1; */
@@ -30,6 +48,13 @@ const Left = styled.div`
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @media only screen and (max-width:750px){
+        height: 70vh;
+    }
+    @media only screen and (max-width:600px){
+        height: 50vh;
+    }
 `
 const Right = styled.div`
     /* flex: 1; */
@@ -39,11 +64,21 @@ const Right = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media only screen and (max-width:750px){
+        height: 70vh;
+    }
+    @media only screen and (max-width:600px){
+        height: 50vh;
+    }
 `
 const Title = styled.div`
     font-size: 3.5vw;
     font-weight: 1000;
     margin-bottom: 30px;
+    @media only screen and (max-width:750px){
+        font-size: 4vw;
+        margin-bottom: 20px;
+    }
 `
 const Desc = styled.div`
     font-size: 1.5vw;
@@ -52,6 +87,10 @@ const Desc = styled.div`
     margin-bottom: 30px;
     word-spacing: 5px;
     letter-spacing: 1px;
+    @media only screen and (max-width:750px){
+        font-size: 2vw;
+        margin-bottom: 20px;
+    }
 `
 const Button = styled.button`
     outline: none;
@@ -64,6 +103,9 @@ const Button = styled.button`
     &:hover{
         background-color: black;
         color:white;
+    }
+    @media only screen and (max-width:500px){
+        padding: 7px 15px;
     }
 `
 const Arrow = styled.div`

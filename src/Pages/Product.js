@@ -7,42 +7,90 @@ import NewsLetter from '../Components/NewsLetter'
 
 const Container = styled.div``
 const Products = styled.div`
-    height: 80vh;
+    max-height: 150vh;
     display: flex;
     justify-content:space-around;
     margin: 40px 40px;
+    @media only screen and (max-width:600px){
+        flex-direction: column;
+    }
 `
 const Left = styled.div`
-    height: 100%;
+    min-height: 480px;
     width: 40vw;
     background: url("https://i.ibb.co/S6qMxwr/jean.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    @media only screen and (max-width:700px){
+        height: 70%;
+    }
+    @media only screen and (max-width:600px){
+        width: 100%;
+    }
+    @media only screen and (max-width:500px){
+        min-height: 380px;
+    }
 `
 const Right = styled.div`
     width: 45vw;
+    @media only screen and (max-width:600px){
+        width: 100%;
+    }
 `
 const Title = styled.div`
     font-size: 40px;
+    @media only screen and (max-width:800px){
+        font-size: 35px;
+    }
+    @media only screen and (max-width:600px){
+        margin-top: 20px;
+    }
 `
 const Desc = styled.div`
     margin: 10px 0px;
     letter-spacing: 1px;
+    @media only screen and (max-width:800px){
+        font-size: 14px;
+    }
 `
 const Price = styled.div`
     font-size: 35px;
     margin: 10px 0px;
+    @media only screen and (max-width:800px){
+        font-size: 30px;
+    }
 `
 const Filter = styled.div`
     display: flex;
     margin: 20px 0px;
+    @media only screen and (max-width:700px){
+        flex-direction: column;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    @media only screen and (max-width:600px){
+        flex-direction: row;
+    }
 `
 const FilterDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 40px;
+    @media only screen and (max-width:800px){
+        margin-right: 20px;
+    }
+    @media only screen and (max-width:700px){
+        margin:10px 0px;
+    }
+    @media only screen and (max-width:600px){
+        margin-right: 40px;
+    }
+    @media only screen and (max-width:410px){
+        margin-right: 30px;;
+    }
+
 `
 const FilterTitle = styled.div`
     font-size: 20px;
@@ -76,6 +124,14 @@ const FilterSizeOption = styled.option`
 const Cart = styled.div`
     display: flex;
     margin: 40px 0px;
+    @media only screen and (max-width:700px){
+        flex-direction: column;
+        margin: 0px 0px;
+        align-items: center;
+    }
+    @media only screen and (max-width:600px){
+        flex-direction: row;
+    }
 `
 const CartLeft = styled.div`
     display: flex;
@@ -83,6 +139,16 @@ const CartLeft = styled.div`
     justify-content: space-evenly;
     width: 100px;
     margin-right: 90px;
+    @media only screen and (max-width:700px){
+        margin-right: 70px;
+        margin: 10px 0px;
+    }
+    @media only screen and (max-width:600px){
+        margin-right: 90px;
+    }
+    @media only screen and (max-width:410px){
+        margin-right: 50px;
+    }
 `
 const Minus = styled.div`
     font-size: 30px;
@@ -111,6 +177,13 @@ const CartRight = styled.button`
     &:hover{
         background-color: teal;
         color: white;
+    }
+    @media only screen and (max-width:800px){
+        padding: 10px 10px;
+    }
+    @media only screen and (max-width:700px){
+        margin: 10px 0px;
+        padding: 10px 20px;
     }
 `
 export default function Product() {

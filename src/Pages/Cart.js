@@ -11,7 +11,10 @@ const Items = styled.div`
     background-color: #EAEDED;
     display: flex;
     justify-content: center;
-    min-height: 50vh;
+    min-height: 45vh;
+    @media only screen and (max-width:1000px){
+        flex-direction: column;
+    }
 `
 const Left = styled.div`
     flex: 3;
@@ -19,11 +22,17 @@ const Left = styled.div`
     background-color: white;
     padding: 10px 20px;
     height: 100%;
+    @media only screen and (max-width:1000px){
+        margin: 10px 5px;
+    }
 `
 const Title = styled.div`
     font-size: 30px;
     letter-spacing: 1px;
     margin: 20px 0px;
+    @media only screen and (max-width:500px){
+        font-size: 25px;
+    }
 `
 const ItemList = styled.div`
     display: flex;
@@ -33,13 +42,34 @@ const ItemList = styled.div`
 `
 const ItemLeft = styled.div`
     flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 const ItemImage = styled.div`
-    height: 40vh;
+    height:240px;
+    width:200px;
     background: url(${props=>props.url});
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @media only screen and (max-width:1000px){
+        height:260px;
+        width:240px;
+    }
+    @media only screen and (max-width:600px){
+        height:220px;
+        width:200px;
+    }
+    @media only screen and (max-width:500px){
+        height:180px;
+        width:160px;
+    }
+    @media only screen and (max-width:420px){
+        height:160px;
+        width:140px;
+    }
 `
 const ItemRight = styled.div`
     flex: 3;
@@ -49,10 +79,27 @@ const ItemRight = styled.div`
 const ItemTitle = styled.div`
     font-size: 30px;
     margin-bottom: 15px;
+    @media only screen and (max-width:600px){
+        font-size: 23px;
+    }
+    @media only screen and (max-width:500px){
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    @media only screen and (max-width:400px){
+        font-size: 16px;
+    }
 `
 const ItemSize = styled.div`
     margin-bottom: 15px;
     font-size: 20px;
+    @media only screen and (max-width:600px){
+        font-size: 18px;
+    }
+    @media only screen and (max-width:500px){
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
 `
 const ItemQty = styled.select`
     margin-bottom: 20px;
@@ -61,10 +108,25 @@ const ItemQty = styled.select`
     background-color: white;
     border: none;
     border: 2px solid black;
+    @media only screen and (max-width:600px){
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    @media only screen and (max-width:500px){
+        font-size: 12px;
+        padding: 4px 8px;
+        margin-bottom: 10px;
+    }
 `
 const ItemQtyOption = styled.option``
 const ItemTotal = styled.div`
     font-size: 20px;
+    @media only screen and (max-width:600px){
+        font-size: 18px;
+    }
+    @media only screen and (max-width:500px){
+        font-size: 14px;
+    }
 `
 const Right = styled.div`
     flex: 2;
@@ -72,6 +134,9 @@ const Right = styled.div`
     margin: 30px 10px;
     background-color: white;
     padding: 10px 20px;
+    @media only screen and (max-width:1000px){
+        margin: 10px 5px;
+    }
 `
 const RightList = styled.div``
 const RightListItem = styled.div`
@@ -103,6 +168,15 @@ const Button = styled.button`
         background-color: teal;
         color: white;
     }
+    @media only screen and (max-width:1000px){
+        width: 30%;
+    }
+    @media only screen and (max-width:520px){
+        width: 40%;
+    }
+    @media only screen and (max-width:400px){
+        width: 50%;
+    }
 `
 export default function Cart() {
     return (
@@ -118,7 +192,7 @@ export default function Cart() {
                             <ItemImage url="https://m.media-amazon.com/images/I/71i9WukRkKL._AC_AA360_.jpg"></ItemImage>
                         </ItemLeft>
                         <ItemRight>
-                            <ItemTitle>American Tourister</ItemTitle>
+                            <ItemTitle>AMC MotherBoard</ItemTitle>
                             <ItemSize>Size : XL</ItemSize>
                             <ItemQty>
                                 <ItemQtyOption>0</ItemQtyOption>
@@ -154,7 +228,7 @@ export default function Cart() {
                             <ItemImage url="https://m.media-amazon.com/images/I/61yZLAaNbwL._AC_AA360_.jpg"></ItemImage>
                         </ItemLeft>
                         <ItemRight>
-                            <ItemTitle>American Tourister</ItemTitle>
+                            <ItemTitle>550W Power Supply</ItemTitle>
                             <ItemSize>Size : XL</ItemSize>
                             <ItemQty>
                                 <ItemQtyOption>0</ItemQtyOption>

@@ -8,6 +8,9 @@ const NavbarContainer = styled.div`
     height:70px;
     display: flex;
     align-items: center;
+    @media only screen and (max-width:500px){
+        height:60px;
+    }
 `
 const Wrapper = styled.div`
     margin: 10px 20px;
@@ -19,6 +22,10 @@ const Left = styled.div`
     flex: 1;
     display:flex;
     align-items:center;
+
+    @media only screen and (max-width:700px){
+        display: none;
+    }
 `
 const Language = styled.span`
     font-size: 14px;
@@ -32,9 +39,22 @@ const Input = styled.input`
 const Center = styled.div`
     flex: 1;
     text-align: center;
+    @media only screen and (max-width:700px){
+        text-align: left;
+    }
 `
 const LOGO = styled.h1`
     font-weight: bolder;
+    @media only screen and (max-width:500px){
+        display: none;
+    }
+`
+const LOGO2 = styled.h2`
+    font-weight: bolder;
+    display: none;
+    @media only screen and (max-width:500px){
+        display: block;
+    }
 `
 const Right = styled.div`
     flex: 1;
@@ -58,6 +78,7 @@ export default function Navbar() {
                 </Left>
                 <Center>
                     <LOGO>LAMA.</LOGO>
+                    <LOGO2>LAMA.</LOGO2>
                 </Center>
                 <Right>
                     <MenuItem>Login</MenuItem>
