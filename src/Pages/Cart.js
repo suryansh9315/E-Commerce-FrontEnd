@@ -4,6 +4,8 @@ import Navbar from '../Components/Navbar'
 import NewsLetter from '../Components/NewsLetter'
 import Adds from '../Components/Adds'
 import Footer from '../Components/Footer'
+import StripeCheckout from 'react-stripe-checkout';
+import { useEffect,useState } from 'react'
 
 const Container = styled.div``
 const Items = styled.div`
@@ -179,6 +181,30 @@ const Button = styled.button`
     }
 `
 export default function Cart() {
+    const [StripeToken, setStripeToken] = useState(null)
+    const onToken = (token) => {
+        setStripeToken(token)
+    }
+    useEffect(() => {
+        const MakeRequest = async ()=>{
+            let url = "http://localhost:5000/api/checkout/payment"
+            let Data = {
+                tokenId:StripeToken.id,
+                amount: 5000
+            }
+            let res = await fetch(url,{
+                method:"POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(Data)
+            })
+            let data = await res.json()
+            console.log(data)
+            window.location.replace('http://localhost:3000/success');
+        }
+        StripeToken && MakeRequest()
+    }, [StripeToken])
     return (
         <Container> 
             <Navbar/>
@@ -262,7 +288,11 @@ export default function Cart() {
                         <TotalText>Total</TotalText>
                         <TotalPrice>$ 45</TotalPrice>
                     </Total>
-                    <Button>Checkout Now</Button>
+                    {StripeToken ? (<span>Processing. Please Wait...</span>):(
+                    <StripeCheckout name="LAMA." billingAddress shippingAddress description="Your Total is $50" amount={5000} stripeKey="pk_test_51K2VUGLHdmbQBmKfNSRYQLUjL8MHGhL0n0vF12Fs7RYmT7fbYnsnikWUrqjuNr6ki7gwrCDMKSN12gRKFkXyTQOv00HqPigLRG" token={onToken}>
+                        <Button>Checkout Now </Button>
+                    </StripeCheckout>
+                    )}
                 </Right>
             </Items>
             <NewsLetter/>
